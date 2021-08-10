@@ -1,7 +1,5 @@
-import { Canvas, createCanvas } from 'canvas'
-
-export class CrossCanvas {
-  private canvas: HTMLCanvasElement | Canvas
+export default class CrossCanvas {
+  private canvas: HTMLCanvasElement
   private context: CanvasRenderingContext2D
 
   get width (): number {
@@ -27,13 +25,13 @@ export class CrossCanvas {
     width?: number,
     height?: number
   }) {
-    this.canvas = typeof document !== 'undefined' ? document.createElement('canvas') : createCanvas(width, height)
+    this.canvas = document.createElement('canvas') as any
     this.context = this.canvas.getContext('2d') as any
     this.width = width
     this.height = height
   }
 
-  public getCanvas () : HTMLCanvasElement | Canvas {
+  public getCanvas () : HTMLCanvasElement {
     return this.canvas
   }
 
@@ -130,5 +128,3 @@ export class CrossCanvas {
     })
   }
 }
-
-export default CrossCanvas
