@@ -98,7 +98,7 @@ export default class CrossCanvas {
     image.src = source
     image.width = width
     image.height = height
-    image.onload = () => this.context.drawImage(image, left, top)
+    image.onload = () => this.context.drawImage(image, left, top, width, height)
     return this
   }
 
@@ -122,7 +122,7 @@ export default class CrossCanvas {
       image.width = width
       image.height = height
       image.onload = () => {
-        this.context.drawImage(image, left, top)
+        this.context.drawImage(image, left, top, width, height)
         resolve(this)
       }
     })
