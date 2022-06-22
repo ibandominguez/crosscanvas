@@ -1,3 +1,3 @@
 # CrossCanvas
 
-Getting myself started with TypeScript.
+Typescript npm package test
